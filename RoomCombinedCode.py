@@ -65,9 +65,9 @@ def guessNumberPlay(numberOfDigits):
 #Combination of Room 1 and Room 2 scripts
 print("Salam and Good Afternoon" )
 print("We are from Room 1" )
-ageInput = int(input("Please key in an age, from 0 to 99 "))
+ageInput = int(input("Please key in your age, from 0 to 99:  "))
 while ageInput > 99 or ageInput < 0:
-    ageInput = int(input("Please key in an age, from 0 to 99 "))
+    ageInput = int(input("Please key in your age, ONLY from 0 to 99:  "))
 numberOfDigit = 0 
 if ageInput >= 0 and ageInput <= 14:
     numberOfDigit = 2 
