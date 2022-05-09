@@ -46,13 +46,13 @@ def guessNumberPlay(numberOfDigits):
         sameList = []
         rannumberList = list(rannumber)
         fournumberList = list(fournumber)
-        for x in range(numberOfDigits):           #for loop to run the command below 4 times
-            if fournumberList[x] == rannumberList[x]:              #check generated number is the same with user input at position x
+        for x in range(numberOfDigits):                     #for loop to run the command below 4 times
+            if fournumberList[x] == rannumberList[x]:       #check generated number is the same with user input at position x
                 samepos += 1   
                 fournumberList[x] = "A"
                 rannumberList[x] = "A"
                 sameList.append(x)   
-        for x in range(numberOfDigits):           #for loop to run the command below 4 times
+        for x in range(numberOfDigits):                     #for loop to run the command below 4 times
             if x in sameList:
                 continue
             if fournumberList[x] in rannumberList:  
@@ -61,7 +61,7 @@ def guessNumberPlay(numberOfDigits):
                 rannumberList[index] = "B"
                 diffpos += 1    
         print(str(samepos)+" BINGO!, " + str(diffpos)+" Other digit(s) correct but wrong position!")
-        if(samepos == numberOfDigits):                                   #condition for if all guessed number is correct
+        if(samepos == numberOfDigits):                      #condition for if all guessed number is correct
             guesscorrect = True                             #set guess flag to true
             print("CONGRATULATIONS! BRAVO! You guess the number correctly : "+rannumber + " in " + str(numOfGuess) + " attempt(s)")
         else:                                               
