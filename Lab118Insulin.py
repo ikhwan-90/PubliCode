@@ -1,3 +1,4 @@
+import re #regex function to clean text
 
 filename = 'preproinsulin-seq.txt'
 File = open(filename, 'rt')
@@ -5,12 +6,15 @@ text = File.read()
 File.close()
 
 #Separate text with list method
-insulinSeq = list(text.split())
-cleanInsulinLst = []
+#insulinSeq = list(text.split())
+#cleanInsulinLst = []
+#
+#for x in range(len(insulinSeq)):
+#    if len(insulinSeq[x]) >= 7:
+#        cleanInsulinLst.append(insulinSeq[x])
+#print(cleanInsulinLst)
 
-for x in range(len(insulinSeq)):
-    if len(insulinSeq[x]) >= 7:
-        cleanInsulinLst.append(insulinSeq[x])
+cleanInsulinLst = re.findall(r'\w{10}', text)                   #regex function - find all alphanumeric with 10 characters
 print(cleanInsulinLst)
 wordCount = sum(len(words) for words in cleanInsulinLst)
 print("Cleaned character(s) amount: " + str(wordCount))
