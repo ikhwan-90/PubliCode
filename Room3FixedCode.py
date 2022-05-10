@@ -35,4 +35,6 @@ while 1:
     elif 'n' in choice.lower():
         print("Exiting...")
         break
+    else:
+        print("Invalid input...please try again")
                
