@@ -20,7 +20,7 @@ def lambda_handler(event, context):
         sns_client = boto3.client('sns')
         sns_client.publish(
             TopicArn = SNS_ARN,
-            Subject = 'Lab 177 Challenge',
+            Subject = 'Word Count Result',
             Message = 'The word count in the file ' + filename + ' is ' + countWords
         )
         
