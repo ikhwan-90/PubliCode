@@ -28,7 +28,7 @@ def lambda_handler(event, context):
         sns_client.publish(
             TopicArn = SNS_ARN,
             Subject = 'Word Count Result',
-            Message = 'The word count in the file ' + filename + ' is ' + countWords
+            Message = 'The word count in the file ' + '"' + filename + '"' + ' is ' + countWords
         )
         
     return {
