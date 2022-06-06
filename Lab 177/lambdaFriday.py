@@ -10,7 +10,7 @@ def lambda_handler(event, context):
         file_obj = event["Records"][0]
         
         #Filter for filename with spaces
-	    #Object key name is URL encoded. For spaces, "file name.jpg" => file+name.jpg. Need to decode with unquote_plus
+	#Object key name is URL encoded. For spaces, "file name.jpg" => file+name.jpg. Need to decode with unquote_plus
         rawfilename = str(file_obj['s3']['object']['key'])
         filename = unquote_plus(rawfilename)
                 
