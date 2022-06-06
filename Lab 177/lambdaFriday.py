@@ -16,7 +16,7 @@ def lambda_handler(event, context):
                 
         #Open file with decoded key
         try:
-            obj = s3.get_object(Bucket='lab177challenge', Key = filename)
+            obj = s3.get_object(Bucket='<S3-Bucket-Name>', Key = filename)
         except:
             print("The file with that name is not found in S3.")
         file_contents = obj["Body"].read().decode('utf-8')
@@ -28,7 +28,7 @@ def lambda_handler(event, context):
         result = print('The word count in the file ' + '"' + filename + '"' + ' is ' + countWords)
         
         # Send message to SNS
-        SNS_ARN = 'arn:aws:sns:us-west-2:137906345418:lab177topic'
+        SNS_ARN = '<Topic-ARN>'
         sns_client = boto3.client('sns')
         sns_client.publish(
             TopicArn = SNS_ARN,
