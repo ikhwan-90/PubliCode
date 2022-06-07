@@ -1,0 +1,21 @@
+CafeInstance Instance ID: i-07842e670d31b6419
+CafeInstance Instance Type: t3.small
+CafeInstance Public DNS Name: ec2-35-90-81-191.us-west-2.compute.amazonaws.com
+CafeInstance Public IP Address: 35.90.81.191
+CafeInstance Availability Zone: us-west-2a
+CafeInstance VPC ID: vpc-0595130db592aa70a
+CafeSecurityGroup Group ID: sg-0e860bdd12a1c1f37
+Cafe VPC IPv4 CIDR block: 10.200.0.0/20
+
+Cafe Public Subnet 1 Subnet ID: subnet-016403ea4684ec436
+Cafe Public Subnet 1 IPv4 CIDR block: 10.200.0.0/24
+
+List of Availability Zones in the region: us-west-2a, us-west-2b, us-west-2c, us-west-2d
+
+Number of orders: 4
+
+CafeDatabaseSG Group ID: sg-0c7d110adb0eb927d
+Cafe Private Subnet 1 ID: subnet-0f5a9d02ef126d7c6
+Cafe Private Subnet 2 ID: subnet-029398cb403503f14
+
+RDS Instance Database Endpoint Address: cafedbinstance.cn1qapnfxoyb.us-west-2.rds.amazonaws.com
