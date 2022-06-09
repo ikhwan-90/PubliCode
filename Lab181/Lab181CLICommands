@@ -1,0 +1,31 @@
+1st symptom: Can't access the public Ip of Cafe Web Server
+
+#Check route table list of routes
+aws ec2 describe-route-tables --route-table-ids rtb-033f37dd87469f40e --query "RouteTables[*].Routes[*]"
+
+#Attach internet gateway to Public route table VPC1
+aws ec2 create-route --gateway-id igw-0a391e423df09d642 --destination-cidr-block 0.0.0.0/0 --route-table-id rtb-033f37dd87469f40e
+
+
+2nd symptom: Can't access SSH of Cafe Web Server
+
+#Look for any blocking rule
+aws ec2 describe-network-acls --query "NetworkAcls[?VpcId=='vpc-05d653adbd8d2f266']]"
+
+#match with VPC1 id
+"RuleNumber": 40,
+"Protocol": "6",
+"PortRange": {
+	"To": 22,
+      "From": 22
+	},
+"Egress": false,
+"RuleAction": "deny",
+"CidrBlock": "0.0.0.0/0"
+
+#Delete rule number 40
+aws ec2 delete-network-acl-entry --ingress --network-acl-id acl-0fabb736a8425e1bf --rule-number 40
+
+#Download flow logs from S3
+aws s3 cp s3://lab181challengevpc/AWSLogs/910427254218/vpcflowlogs/us-west-2/2022/06/09 . --recursive
+
