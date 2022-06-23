@@ -1,0 +1,14 @@
+mkdir files"$(date +"%d%m%y")"
+cd files"$(date +"%d%m%y")"
+sudo touch script.sh
+sudo chmod 755 script.sh
+sudo nano script.sh
+
+#Put commands inside script
+#
+#
+# After Script has been saved and run
+#
+#
+#To verify files created
+ls -l files* | sort -V
