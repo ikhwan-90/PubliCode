@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     s3 = boto3.client('s3')
     
     if event:
-        #Fetch and open object
+        #Fetch object Key (Filename)
         file_obj = event["Records"][0]
         
         #Filter for filename with spaces
@@ -14,7 +14,7 @@ def lambda_handler(event, context):
         rawfilename = str(file_obj['s3']['object']['key'])
         filename = unquote_plus(rawfilename)
                 
-        #Open file with decoded key
+        #Open object with decoded key
         try:
             obj = s3.get_object(Bucket='<S3-Bucket-Name>', Key = filename)
         except:
