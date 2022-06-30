@@ -12,7 +12,7 @@ print("Cleaned character(s) amount: " + str(wordCount))
 
 #Convert items in list to single string
 insulinStr = ""
-for item in cleanInsulinLst[0:20]:
+for item in cleanInsulinLst[::]:
     insulinStr = insulinStr + item
 
 wordShift = 0
