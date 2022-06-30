@@ -1,2 +1,2 @@
 # PubliCode
-Codes from AWS classes
+Codes from AWS Training
